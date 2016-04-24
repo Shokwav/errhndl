@@ -10,7 +10,7 @@ typedef struct {
 	int type, in_try_block;
 } errinfo;
 
-#define GETERR(err) ((err).type)
+#define ERRGET(err) ((err).type)
 
 #define ERRTHROW(err, t) do{ if((err).in_try_block){ longjmp((err).buffer, (err).type = (t)); } }while(0)
 #define ERRTRY(err, body) if((((err).in_try_block = 1) == 2) || (!setjmp((err).buffer))){ body (err).in_try_block = 0; }
