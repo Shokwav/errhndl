@@ -11,7 +11,7 @@ int main(void){
 		ERRTHROW(err, test_error); /* Comment this out for no error */
 		puts("No error");
 	)ERRCATCH(err,
-		printf("Caught error (type = %i)\n", GETERR(err));
+		printf("Caught error (type = %i)\n", ERRGET(err));
 	)
 
 	ERRTHROW(err, test_error); /* Throwing outside of try block does nothing */
