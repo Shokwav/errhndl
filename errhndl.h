@@ -4,7 +4,7 @@
 
 #include <setjmp.h>
 
-/* "Internal" structure, only access through provided macros */
+/* "Internal" structure; only access through provided macros */
 typedef struct {
 	jmp_buf buffer;
 	int type, in_try_block;
